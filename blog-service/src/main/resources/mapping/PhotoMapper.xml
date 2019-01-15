@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.core.dao.PhotoMapper">
+  <resultMap id="BaseResultMap" type="com.model.Photo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="album" jdbcType="INTEGER" property="album" />
+    <result column="describe" jdbcType="VARCHAR" property="describe" />
+    <result column="upfile_id" jdbcType="INTEGER" property="upfileId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, album, describe, upfile_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from photo
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from photo
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.model.Photo">
+    insert into photo (id, album, describe, 
+      upfile_id)
+    values (#{id,jdbcType=INTEGER}, #{album,jdbcType=INTEGER}, #{describe,jdbcType=VARCHAR}, 
+      #{upfileId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.Photo">
+    insert into photo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="album != null">
+        album,
+      </if>
+      <if test="describe != null">
+        describe,
+      </if>
+      <if test="upfileId != null">
+        upfile_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="album != null">
+        #{album,jdbcType=INTEGER},
+      </if>
+      <if test="describe != null">
+        #{describe,jdbcType=VARCHAR},
+      </if>
+      <if test="upfileId != null">
+        #{upfileId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.Photo">
+    update photo
+    <set>
+      <if test="album != null">
+        album = #{album,jdbcType=INTEGER},
+      </if>
+      <if test="describe != null">
+        describe = #{describe,jdbcType=VARCHAR},
+      </if>
+      <if test="upfileId != null">
+        upfile_id = #{upfileId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.Photo">
+    update photo
+    set album = #{album,jdbcType=INTEGER},
+      describe = #{describe,jdbcType=VARCHAR},
+      upfile_id = #{upfileId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

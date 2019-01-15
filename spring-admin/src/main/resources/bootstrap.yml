@@ -1,0 +1,41 @@
+# 启动端口
+server:
+  port: 8790
+spring:
+  # 应用名称
+  application:
+    name: admin-server
+  security:
+    user:
+      # 访问spring admin 用户名
+      name: 'hxz'
+      # 访问spring admin 密码
+      password: 'hxz'
+
+eureka:
+  client:
+    # eureka client间隔多久去拉取服务注册信息，默认为30秒
+    registryFetchIntervalSeconds: 10
+    # eureka服务地址
+    service-url:
+      defaultZone: ${eureka-server:http://${spring.security.user.name}:${spring.security.user.password}@localhost:8761}/eureka/
+  instance:
+    # eureka client发送心跳给server端的频率，默认为30秒
+    leaseRenewalIntervalInSeconds: 30
+    # 健康检测端点地址
+    health-check-url-path: /actuator/health
+    # 自定义元数据,可以被其他客户端调用
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+
+#暴露端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  #应用健康详情展示
+  endpoint:
+    health:
+      show-details: ALWAYS
