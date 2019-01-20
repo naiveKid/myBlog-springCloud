@@ -1,15 +1,13 @@
-package com.user.controller;
+package com.apigateway.controller;
 
+import com.apigateway.service.UserService;
 import com.model.User;
-import com.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Description: 用户服务接口
+ * @Description:用户
  */
 @RestController
 @RequestMapping("/user")
@@ -18,14 +16,16 @@ public class UserController {
     UserService userService;
 
     /**
-     * 登陆授权，返回JWT
+     * 测试登陆JWT授权
      *
      * @return
      */
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public User login(@RequestBody User user) {
-        user.setToken(userService.login(user));
-        return user;
+    @RequestMapping("/login")
+    public User login(User user) {
+        if (user == null || user.getLoginName() == null) {
+            return null;
+        }
+        return userService.login(user);
     }
 
     /**
@@ -36,6 +36,8 @@ public class UserController {
      */
     @RequestMapping(value = "/verifyToken")
     public boolean verifyToken(String token) {
+        if (token == null)
+            return false;
         return userService.verifyToken(token);
     }
 }

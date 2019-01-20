@@ -1,10 +1,22 @@
 package com.model;
 
+/**
+ * 权限表
+ */
 public class Authority {
+    /**
+     * 主键id
+     */
     private Integer id;
 
+    /**
+     * 权限取值
+     */
     private String option;
 
+    /**
+     * 权限描述
+     */
     private String describe;
 
     public Integer getId() {

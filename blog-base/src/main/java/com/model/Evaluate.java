@@ -2,18 +2,44 @@ package com.model;
 
 import java.util.Date;
 
+/**
+ * 评价表
+ */
 public class Evaluate {
+    /**
+     * 主键id
+     */
     private Integer id;
 
+    /**
+     * 评价人姓名
+     */
     private String name;
 
+    /**
+     * 评价时间
+     */
     private Date createTime;
 
+    /**
+     * 评价内容
+     */
     private String content;
 
+    /**
+     * 评价类型(0:相册1:文章)
+     */
     private Integer evaluateType;
 
+    /**
+     * 回复内容
+     */
     private String answerContent;
+
+    /**
+     * 文章id
+     */
+    private Integer articleId;
 
     public Integer getId() {
         return id;
@@ -61,5 +87,13 @@ public class Evaluate {
 
     public void setAnswerContent(String answerContent) {
         this.answerContent = answerContent == null ? null : answerContent.trim();
+    }
+
+    public Integer getArticleId() {
+        return articleId;
+    }
+
+    public void setArticleId(Integer articleId) {
+        this.articleId = articleId;
     }
 }

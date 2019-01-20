@@ -1,10 +1,22 @@
 package com.model;
 
+/**
+ * 标签、文章关系表
+ */
 public class LabelArticle {
+    /**
+     * 主键id
+     */
     private Integer id;
 
+    /**
+     * 标签id
+     */
     private Integer labelId;
 
+    /**
+     * 文章id
+     */
     private Integer articleId;
 
     public Integer getId() {

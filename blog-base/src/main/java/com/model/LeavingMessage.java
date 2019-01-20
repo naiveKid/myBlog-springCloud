@@ -2,17 +2,38 @@ package com.model;
 
 import java.util.Date;
 
+/**
+ * 留言表
+ */
 public class LeavingMessage {
+    /**
+     * 主键id
+     */
     private Integer id;
 
+    /**
+     * 留言者姓名
+     */
     private String name;
 
+    /**
+     * 留言者email
+     */
     private String email;
 
+    /**
+     * 留言时间
+     */
     private Date createTime;
 
+    /**
+     * 留言内容
+     */
     private String content;
 
+    /**
+     * 留言回复内容
+     */
     private String answerContent;
 
     public Integer getId() {

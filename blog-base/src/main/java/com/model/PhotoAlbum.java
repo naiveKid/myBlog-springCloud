@@ -1,14 +1,32 @@
 package com.model;
 
+/**
+ * 相册集表
+ */
 public class PhotoAlbum {
+    /**
+     * 主键id
+     */
     private Integer id;
 
+    /**
+     * 相册集标题
+     */
     private String title;
 
+    /**
+     * 相册集描述
+     */
     private String describe;
 
+    /**
+     * 相册缩略图id
+     */
     private Integer thumbnail;
 
+    /**
+     * 相册简介
+     */
     private String content;
 
     public Integer getId() {

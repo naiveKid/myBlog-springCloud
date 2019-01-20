@@ -1,10 +1,22 @@
 package com.model;
 
+/**
+ * 文章分类表
+ */
 public class ArticleClassification {
+    /**
+     * 主键id
+     */
     private Integer id;
 
+    /**
+     * 分类名称
+     */
     private String classificationName;
 
+    /**
+     * 排序
+     */
     private Integer order;
 
     public Integer getId() {

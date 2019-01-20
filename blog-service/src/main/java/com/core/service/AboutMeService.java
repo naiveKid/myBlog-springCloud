@@ -14,7 +14,11 @@ public class AboutMeService {
     @Autowired
     AboutMeMapper aboutMeMapper;
 
-
+    /**
+     * 关于我的相关信息
+     *
+     * @return
+     */
     public AboutMe getAboutMe() {
         return aboutMeMapper.selectByPrimaryKey(1);
     }

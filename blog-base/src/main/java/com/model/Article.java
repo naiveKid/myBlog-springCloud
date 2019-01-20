@@ -2,25 +2,58 @@ package com.model;
 
 import java.util.Date;
 
+/**
+ * 文章表
+ */
 public class Article {
+    /**
+     * 主键id
+     */
     private Integer id;
 
+    /**
+     * 文章分类id
+     */
     private Integer articleClassificationId;
 
+    /**
+     * 文章标题
+     */
     private String title;
 
+    /**
+     * 文章简述
+     */
     private String sketch;
 
+    /**
+     * 文章作者用户id
+     */
     private Integer author;
 
+    /**
+     * 发布时间
+     */
     private Date createTime;
 
+    /**
+     * 阅读数
+     */
     private Integer readNum;
 
+    /**
+     * 点赞数
+     */
     private Integer goodNum;
 
+    /**
+     * 排序
+     */
     private Integer order;
 
+    /**
+     * 文章内容
+     */
     private String content;
 
     public Integer getId() {

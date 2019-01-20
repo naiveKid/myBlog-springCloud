@@ -1,15 +1,38 @@
 package com.model;
 
+/**
+ * 用户表
+ */
 public class User {
+    /**
+     * 主键
+     */
     private Integer id;
 
+    /**
+     * 登陆名
+     */
     private String loginName;
 
+    /**
+     * 密码
+     */
     private String password;
 
+    /**
+     * 用户名
+     */
     private String userName;
 
+    /**
+     * 角色表id
+     */
     private Integer roleId;
+
+    /**
+     * 用于验证的token
+     */
+    private String token;
 
     public Integer getId() {
         return id;
@@ -49,5 +72,13 @@ public class User {
 
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

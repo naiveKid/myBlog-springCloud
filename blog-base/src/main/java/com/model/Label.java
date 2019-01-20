@@ -1,10 +1,22 @@
 package com.model;
 
+/**
+ * 标签表
+ */
 public class Label {
+    /**
+     * 主键id
+     */
     private Integer id;
 
+    /**
+     * 标签名
+     */
     private String name;
 
+    /**
+     * 显示顺序
+     */
     private Integer order;
 
     public Integer getId() {

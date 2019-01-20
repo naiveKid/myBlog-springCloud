@@ -1,10 +1,22 @@
 package com.model;
 
+/**
+ * 角色、权限关系表
+ */
 public class RoleAuthority {
+    /**
+     * 主键id
+     */
     private Integer id;
 
+    /**
+     * 角色id
+     */
     private Integer roleId;
 
+    /**
+     * 权限id
+     */
     private Integer authorityId;
 
     public Integer getId() {

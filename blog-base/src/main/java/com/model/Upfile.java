@@ -1,8 +1,17 @@
 package com.model;
 
+/**
+ * 附件表
+ */
 public class Upfile {
+    /**
+     * 主键id
+     */
     private Integer id;
 
+    /**
+     * 文件路径
+     */
     private String filePath;
 
     public Integer getId() {

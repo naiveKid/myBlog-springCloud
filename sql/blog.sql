@@ -94,6 +94,7 @@ CREATE TABLE `evaluate` (
   `content` varchar(200) NOT NULL COMMENT '评价内容',
   `evaluate_type` int(2) NOT NULL COMMENT '评价类型(0:相册1:文章)',
   `answer_content` varchar(500) DEFAULT NULL COMMENT '回复内容',
+  `article_id` int(11) NOT NULL COMMENT '文章id',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

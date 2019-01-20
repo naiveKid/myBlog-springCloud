@@ -1,10 +1,22 @@
 package com.model;
 
+/**
+ * 角色表
+ */
 public class Role {
+    /**
+     * 主键id
+     */
     private Integer id;
 
+    /**
+     * 选项值
+     */
     private String option;
 
+    /**
+     * 角色描述
+     */
     private String describe;
 
     public Integer getId() {

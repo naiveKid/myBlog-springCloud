@@ -1,12 +1,27 @@
 package com.model;
 
+/**
+ * 相册
+ */
 public class Photo {
+    /**
+     * 主键id
+     */
     private Integer id;
 
+    /**
+     * 所属相册集id
+     */
     private Integer album;
 
+    /**
+     * 相片描述
+     */
     private String describe;
 
+    /**
+     * 文件表id
+     */
     private Integer upfileId;
 
     public Integer getId() {
